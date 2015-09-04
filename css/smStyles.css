@@ -8,10 +8,38 @@
 }
 
 #contactForm {
-    background: #5bc0de;
-    height: 600px; 
-    padding-top:100px;
-    padding-bottom:0px;
-    margin-bottom:0px;
+    background: #5bc0de;    	
+	margin: 0 auto; 
+	width:550px;
+    padding-top:50px;
+    padding-bottom:50px;
+    margin-bottom:50px;
     color:inherit;
+}
+
+#aboutUs {
+    background: #5bc0de;    	
+	margin: 0 auto; 
+	width:550px;
+    padding-top:50px;
+    padding-bottom:50px;
+	padding-left:50px;
+    margin-bottom:50px;
+    color:inherit;
+}
+
+.tab {
+    padding: 0 50px;
+}
+
+.tab2 {
+    padding: 0 30px;
+}
+
+legend { color: #f80; }
+
+#over img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,22 +1,43 @@
-var app = angular.module("smApp",[]);
-
-app.config(['$routeProvider',function($routeProvider) {}]);
-
-app.controller('sm-controller', function($scope, $http){
-	$scope.firstname= "shibu";
-	$scope.lastname = "manoharan";
-	$scope.fullname = $scope.firstname + " " + $scope.lastname;
-	$http.get("http://www.w3schools.com/angular/customers_mysql.php").success(function(response){
-		$scope.countries = response.records;
-	});
-	$scope.master = {name:"shibu", age:36};
-	$scope.reset = function(){
-		$scope.copy = angular.copy($scope.master);
-	}
-	$scope.reset();
-	$scope.$watch('password1', function(){
-		$scope.valid = ($scope.password1 != $scope.password2);
-	})
-	
+//Define an angular module for our app
+var app = angular.module('smApp', []);
+ 
+//Define Routing for app
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+    when('/', {
+        templateUrl: 'views/Home.html',
+        controller: 'MainController'
+	}).
+	when('/Services/', {
+        templateUrl: 'views/Services.html',
+        controller: 'MainController'
+	}).
+	when('/Profile/', {
+        templateUrl: 'views/Profile.html',
+        controller: 'MainController'
+	}).
+	when('/AboutUs/', {
+        templateUrl: 'views/AboutUs.html',
+        controller: 'MainController'
+	}).
+	when('/Careers/', {
+        templateUrl: 'views/Careers.html',
+        controller: 'ContactUsController'
+    }).
+    when('/ContactUs/', {
+        templateUrl: 'views/ContactUS.php',
+        controller: 'ContactUsController'
+    }).
+    otherwise({
+        redirectTo: '/'
+    });
+}]);
+ 
+app.controller('MainController', function($scope, $routeParams) {
+     
 });
+ 
+app.controller('ContactUsController', function($scope, $routeParams) {
 
+});
